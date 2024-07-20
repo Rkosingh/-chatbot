@@ -4,13 +4,19 @@ import { Segment, Button, Icon } from "semantic-ui-react";
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 
+const SupportMessage = () => (
+  <div>
+    For further information, contact our support team at <a href="mailto:support@kidgage.com">support@kidgage.com</a>.
+  </div>
+);
+
 function App() {
   const [showChat, setShowChat] = useState(false);
 
   const steps = [
     {
       id: 'Greet',
-      message: 'Hello, Welcome to our booking site for kids\' extracurricular activities!',
+      message: 'Hello, Welcome to kidgage',
       trigger: 'Ask Name'
     },
     {
@@ -34,6 +40,9 @@ function App() {
         { value: "Swimming", label: "Swimming", trigger: "Swimming" },
         { value: "Dancing", label: "Dancing", trigger: "Dancing" },
         { value: "Art", label: "Art", trigger: "Art" },
+        { value: "Music", label: "Music", trigger: "Music" },
+        { value: "Martial Arts", label: "Martial Arts", trigger: "MartialArts" },
+        { value: "Coding", label: "Coding", trigger: "Coding" },
       ],
     },
     {
@@ -52,8 +61,23 @@ function App() {
       trigger: 'Support'
     },
     {
+      id: 'Music',
+      message: 'Great! You selected Music. Please visit our music classes section to book a session.',
+      trigger: 'Support'
+    },
+    {
+      id: 'MartialArts',
+      message: 'Great! You selected Martial Arts. Please visit our martial arts classes section to book a session.',
+      trigger: 'Support'
+    },
+    {
+      id: 'Coding',
+      message: 'Great! You selected Coding. Please visit our coding classes section to book a session.',
+      trigger: 'Support'
+    },
+    {
       id: 'Support',
-      message: 'For further information, contact our support team at support@kidgage.com.',
+      component: <SupportMessage />,
       end: true
     }
   ];
