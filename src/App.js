@@ -10,7 +10,7 @@ function App() {
   const steps = [
     {
       id: 'Greet',
-      message: 'Hello, Welcome to our website',
+      message: 'Hello, Welcome to our booking site for kids\' extracurricular activities!',
       trigger: 'Ask Name'
     },
     {
@@ -25,25 +25,36 @@ function App() {
     },
     {
       id: "Name",
-      message: "Hi {previousValue}, Please select your issue",
-      trigger: "issues",
+      message: "Hi {previousValue}, please select the activity you are interested in.",
+      trigger: "activities",
     },
     {
-      id: "issues",
+      id: "activities",
       options: [
-        { value: "React", label: "React", trigger: "React" },
-        { value: "Angular", label: "Angular", trigger: "Angular" },
+        { value: "Swimming", label: "Swimming", trigger: "Swimming" },
+        { value: "Dancing", label: "Dancing", trigger: "Dancing" },
+        { value: "Art", label: "Art", trigger: "Art" },
       ],
     },
     {
-      id: 'React',
-      message: 'Thanks for telling your react issue',
-      end: true,
+      id: 'Swimming',
+      message: 'Great! You selected Swimming. Please visit our swimming classes section to book a session.',
+      trigger: 'Support'
     },
     {
-      id: 'Angular',
-      message: 'Thanks for telling your Angular issue',
-      end: true,
+      id: 'Dancing',
+      message: 'Great! You selected Dancing. Please visit our dancing classes section to book a session.',
+      trigger: 'Support'
+    },
+    {
+      id: 'Art',
+      message: 'Great! You selected Art. Please visit our art classes section to book a session.',
+      trigger: 'Support'
+    },
+    {
+      id: 'Support',
+      message: 'For further information, contact our support team at support@kidgage.com.',
+      end: true
     }
   ];
 
